@@ -1,0 +1,227 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+    margin: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role='list'],
+ol[role='list'] {
+    list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+    scroll-behavior: smooth;
+}
+
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+    text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+    max-width: 100%;
+    display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+    font: inherit;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+    html:focus-within {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+body {
+    text-rendering: optimizeSpeed;
+    line-height: 1.5;
+    font-family: 'Karla', sans-serif;
+    background-color: var(--GrayishBlue);
+}
+
+
+:root {
+    /* Primary */
+    --Cyan: hsl(179, 62%, 43%);
+    --BrightYellow: hsl(71, 73%, 54%);
+    /* Neutral */
+    --LightGray: hsl(204, 43%, 93%);
+    --GrayishBlue: hsl(218, 22%, 67%);
+}
+
+
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    max-width: 375px;
+    margin: 0 auto;
+    border-radius: 5px;
+}
+
+/* JOIN */
+.join {
+    padding: 2rem;
+    background-color: white;
+    border-radius: 5px 5px 0 0;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.join>h1 {
+    font-size: larger;
+    margin-bottom: 1rem;
+    color: var(--Cyan);
+}
+
+.join>h2 {
+    margin-bottom: 1rem;
+    font-size: medium;
+    line-height: 1.5rem;
+    color: var(--BrightYellow);
+}
+
+.join>p {
+    color: var(--GrayishBlue);
+}
+
+/* MONTHLY SUBSCRIPTION */
+.monthlySub {
+    width: 100%;
+    height: fit-content;
+    padding: 2rem;
+    color: var(--LightGray);
+    background-color: var(--Cyan);
+    
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.monthlySub h1 {
+    font-size: larger;
+}
+
+button {
+    width: 100%;
+    margin: 2rem auto 0;
+    padding: 1rem;
+    color: var(--LightGray);
+    font-weight: bold;
+    background-color: var(--BrightYellow);
+    border-radius: 5px;
+    border: none;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+}
+
+
+/* WHY US */
+
+.whyUs {
+    width: 100%;
+    height: fit-content;
+    color: white;
+    padding: 2rem;
+    background-color: rgb(107, 188, 188);
+    border-radius: 0 0 5px 5px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.whyUs h1 {
+    margin-bottom: 1rem;
+    font-size: larger;
+}
+
+.whyUs p {
+    font-weight: 100;
+    color: var(--LightGray);
+}
+
+strong {
+    font-size: xx-large;
+}
+
+span {
+    color: var(--LightGray);
+    font-weight: 100;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    text-align: left;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.attribution {
+    font-size: 11px;
+    text-align: center;
+}
+
+.attribution a {
+    color: hsl(228, 45%, 44%);
+}
+
+@media (min-width: 1200px) {
+
+    .container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-auto-rows: min-content;
+        justify-content: center;
+        align-content: center;
+        height: 100vh;
+        min-width: 600px;
+        margin: 0 auto;
+    }
+
+    .join {
+        grid-column: 1/3;
+    }
+
+    .monthlySub{
+        border-radius: 0 0 0 5px;
+    }
+    .whyUs{
+        border-radius: 0 0 5px ;
+    }
+}
